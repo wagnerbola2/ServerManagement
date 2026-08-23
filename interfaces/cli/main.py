@@ -4,6 +4,21 @@ from infrastructure.windows.windows_repository import windowsRepository
 from interfaces.cli.views import view
 from domain.emun import Options
 import win32service
+import os
+import sys
+
+if sys.platform == "win32":
+    import ctypes
+    
+    # Constante do Windows para Maximizar
+    SW_MAXIMIZE = 3
+    
+    # Captura o identificador (Handle) da janela atual do console
+    hwnd = ctypes.windll.kernel32.GetConsoleWindow()
+    
+    if hwnd:
+        # Envia o comando para o Windows maximizar a janela do executável
+        ctypes.windll.user32.ShowWindow(hwnd, SW_MAXIMIZE)
 
 def main():
     servers = config_servers.list()
