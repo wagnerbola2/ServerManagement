@@ -5,7 +5,7 @@
             "name": "Python: Debug `.venv`",
             "type": "debugpy",
             "request": "launch",
-            "program": "${file}",
+            "program": "./interfaces/cli/main.py",
             "console": "integratedTerminal",
             "python": "${workspaceFolder}/.venv/Scripts/python.exe",
             "env": {

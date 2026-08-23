@@ -5,6 +5,7 @@ class Settings(BaseSettings):
     server_user: str
     server_domain: str
     server_password: str
+    services_filter: str
 
     class Config:
         env_file = str(diretorio_base() / ".env")
